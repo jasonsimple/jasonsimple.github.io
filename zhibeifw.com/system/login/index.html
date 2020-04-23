@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">html, body {height:100%;margin:0;}</style>
+  
+<style type="text/css">
+@import url("/resources/css/toolbar.css");
+</style>
+
+  <title>Welcome to OpenCms</title>
+</head>
+
+<body class="v-generated-body opencms">
+  <!-- Loads the Vaadin widget set, etc. -->
+  <script type="text/javascript" src="..\..\VAADIN\vaadinBootstrap.js"></script>
+          
+  <form class="cmslogin-form" id="opencms-login-form" method="post" action="">
+  <div style="position: relative; left: -2000px; top: -2000px;">
+  	<input type="text" id="hidden-username" name="ocUname">
+  	      <input type="password" id="hidden-password" name="ocPword" autocomplete="on">
+  </div>    	  
+  <div id="login-app" class="v-app vaadinBox">
+	    <!-- Optional placeholder for the loading indicator -->
+	    <div class=" v-app-loading"><div class='o-loading-indicator opencms-font'><div class="oc-spin-center">
+<span class="oc-spinner-bg"></span>
+<span class="oc-spinner oc-spin-outer"></span><br>
+<span class="oc-spinner-circle oc-spin-inner"></span><br>
+<span class="oc-spinner-dots oc-spin-dots"></span>
+</div></div></div>
+	    <!-- Alternative fallback text -->
+	    <noscript>You have to enable javascript in your browser to
+	              use an application built with Vaadin.</noscript>
+	  </div>
+         </form> 
+  <script type="text/javascript">//<![CDATA[
+    if (!window.vaadin)
+        alert("Failed to load the bootstrap JavaScript: "+
+              "VAADIN/vaadinBootstrap.js");
+
+    /* The UI Configuration */
+	vaadin.initApplication("login-app", {
+	    "browserDetailsUrl": "/workplace/dialogs/",
+	    "serviceUrl": "/workplace/dialogs/",
+	    "widgetset": "org.opencms.ui.WidgetSet",
+	    "theme": "opencms",
+	    "versionInfo": {"vaadinVersion": "8.5.2"},
+	    "vaadinDir": "/VAADIN/",
+	    "heartbeatInterval": 300,
+	    "debug": false,
+	    "standalone": false,
+	    /* In case of any issues ask to reload. No need to be any more specific. */
+	    "authErrMsg": {
+	        "message": "Please <u>click here<\/u> to reload.",
+	        "caption": "Communication problem"
+	    },
+	    "comErrMsg": {
+	        "message": "Please <u>click here<\/u> to reload.",
+	        "caption": "Communication problem"
+	    },
+	    "sessExpMsg": {
+	        "message": "Please <u>click here<\/u> to reload.",
+	        "caption": "Communication problem"
+	    }
+	});//]] >
+  </script>
+</body>
+</html>

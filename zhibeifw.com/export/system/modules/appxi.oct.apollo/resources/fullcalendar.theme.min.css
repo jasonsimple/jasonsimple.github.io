@@ -1,0 +1,48 @@
+.fc-toolbar.fc-header-toolbar {
+  margin-top: .8rem;
+  margin-bottom: 1.8rem;
+}
+.fc-toolbar .fc-left h2 {
+  font-size: 1.5rem;
+}
+.fc-basic-view .fc-body .fc-row {
+  min-height: 6rem;
+  text-align: center;
+}
+.fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+  float: none;
+  padding: 10px;
+  display: block;
+}
+.fc td, .fc th {
+  border-width: 3px;
+  border-color: #501010;
+}
+.fc td.fc-day {
+  padding: 50px 5px 5px;
+}
+.fc td.fc-today {
+  border-style: solid;
+  background: #dbccc5;
+}
+.fc th.fc-day-header {
+  padding: 10px 5px;
+  background-color: #5f0303;
+  color: white;
+  border-color: #bcbcbc;
+}
+td.fc-day-top {padding: 4px 1px}
+.fc .fc-day-tbDate {color: #4f0909;padding-bottom: 10px;}
+.fc .fc-day-hdDate {font-size: .875rem;font-weight: 600;padding-top: 2px;padding-bottom: 2px}
+
+@media (max-width:767px) {
+	td.fc-day-top {
+	  padding: 1px;
+	}
+	.fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+		padding: 4px;
+	}
+	span.long-lmonth {
+		font-size: x-small;
+	}
+}
