@@ -871,5 +871,38 @@
 <script type="text/javascript" src="export\system\modules\org.opencms.apollo.theme\resources\plugins\revolution-slider\rs-plugin\js\jquery.themepunch.revolution.min.js"></script><script type="text/javascript">$(Apollo.init);$(A80d2aa8efabd618bbf822521d1f0b378);$(window).on("load",B404ed0f2045d048a4fa5f0d3400ed15b);</script>
 
 	<script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?e82b02eb05fab819978cedd1a1ae0d9d";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script>
+	<script>
+(function() {
+    // 你的新必应收录网址
+    var siteDomain = 'jasonsimple-github-p6q98oacm-jasonsimples-projects.vercel.app';
+    
+    // 找到所有搜索表单（桌面端和移动端，名字都是 searchFormHeader）
+    var forms = document.querySelectorAll("form[name='searchFormHeader']");
+    
+    forms.forEach(function(form) {
+        // 修改表单为 GET 方式提交到必应
+        form.setAttribute('action', 'https://www.bing.com/search');
+        form.setAttribute('method', 'get');
+        // 如果有 target，保持在新标签页打开（可选），这里统一新标签
+        form.setAttribute('target', '_blank');
+        
+        // 找到搜索按钮，移除旧的 onclick（因为表单行为已改变）
+        var btn = form.querySelector('button[type="button"]');
+        if (btn) {
+            btn.setAttribute('type', 'submit'); // 改为 submit 类型
+            btn.removeAttribute('onclick');
+        }
+        
+        // 在表单提交前，自动在搜索词前加上 site:域名
+        form.addEventListener('submit', function(e) {
+            var input = form.querySelector('input[name="q"]');
+            if (input && input.value.trim()) {
+                // 关键：加上 site: 限定只在你的网站内搜索
+                input.value = 'site:' + siteDomain + ' ' + input.value.trim();
+            }
+        });
+    });
+})();
+</script>
 </body>
 </html>
